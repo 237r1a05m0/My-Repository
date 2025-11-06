@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html>
+    <head><title>Event Registration</title></head>
+    <body> 
+        <form id="registrationForm" onsubmit="return validateForm()"> 
+            <label for="name">Name</label> 
+            <input type="text" id="name" required><br>
+            <label for="email">Email</label> 
+            <input type="email" id="email" required><br>
+            <label for="address"> Address</label>
+            <input type="address" id="address" required><br>
+            <label for="phone">Phone Number</label> 
+            <input type="tel" id="phone" required pattern="[0-9]{10}"><br> 
+            <label for="event">What is your gender</label> 
+            <select id="event" required> 
+                <option value=>--Select--</option> 
+                <option value="Male">Male</option> 
+                <option value="Female">Female</option> </select>
+                <select id="event" required> 
+            <label for="event">--Select--</label>
+                <option value="Indian">Indian</option>
+                <option value="Other Nationality">Other Nationality</option> </select>
+            <select id="event" required> 
+                <option value="--Select--What is your Designation</option>
+                <option value="Student">Student</option>
+                <option value="Private Employee">Private Employee</option>
+                <option value="Business Management">Business Management</option>
+            <button type="submit">Register</button> 
+        </form>                                             
+        <script> 
+        function validateForm() { 
+            const phone = document.getElementById('phone').value;                                
+            if (!/^\d{10}$/.test(phone)) { 
+                alert('Invalid phone number'); 
+                return false; 
+            } 
+            alert('Registration Successful!'); 
+            return true; 
+        } 
+        </script> 
+    </body> 
+</html> 
+ 
